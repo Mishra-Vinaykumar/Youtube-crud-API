@@ -1,0 +1,12 @@
+{
+  "name": "youtube-api",
+  "version": "1.0.0",
+  "description": "In this api we are performing CRUD operation using PostMan, where we can upload a video using cloudnairy service",
+  "main": "main.js",
+  "module": "common.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vinay-Mishra",
+  "license": "ISC"
+}
