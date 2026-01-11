@@ -1,3 +1,12 @@
+import dotenv from "dotenv";
+dotenv.config({
+    path:'./env'
+})
+
+import connDB from "./db/conn.js"
+
+connDB();
+
 const profile = {
     userName : "Mishra-Vinay",
     age : 23,
@@ -7,3 +16,5 @@ const profile = {
 }
 
 profile.printDetails();
+
+// require('dotenv').config({path:'./env'})
