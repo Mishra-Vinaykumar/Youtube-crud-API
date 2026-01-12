@@ -6,7 +6,8 @@ const app = express();
 const connDB = async()=>{
     try {
         const connctionInstance = await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
-        console.log(`\n MongoDB connection !! DBHOST ${connctionInstance}`);
+        // console.log(`\n MongoDB connection !! DBHOST ${connctionInstance}`);
+        console.log(`\n MongoDB connection !! DBHOST ${connctionInstance.connection.host}`);
         
     } catch (error) {
         console.log("MongoDB Connction failes error",error);
