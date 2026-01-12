@@ -1,9 +1,9 @@
 import dotenv from "dotenv";
+import connDB from "./db/conn.js"
 dotenv.config({
     path:'./env'
 })
 
-import connDB from "./db/conn.js"
 
 connDB();
 
