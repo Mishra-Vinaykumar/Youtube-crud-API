@@ -56,10 +56,11 @@ userSchema.pre("save", async function (next) {
     next();
 })
 
+// chek if password is correct
 userSchema.methods.isPasswordCorrect = async function (password) {
     return await bcrypt.compare(password, this.password) // (clear password , hashPassword)
 }
-
+// Generate Access Token
 userSchema.methods.genrateAccessToken = function () {
     return jwt.sign({
         // This is PayLoad 
@@ -72,9 +73,10 @@ userSchema.methods.genrateAccessToken = function () {
         {
             expiresIn: process.env.ACCESS_TOKEN_EXPIREY
         }
-    )
-}
+    );
+};
 
+// Generate Refresh Token
 userSchema.methods.generateRefreshToken = function () {
     return jwt.sign({
         _id: this._id,
@@ -83,7 +85,7 @@ userSchema.methods.generateRefreshToken = function () {
     {
         expiresIn:process.env.REFRESH_TOKEN_EXPIREY
     }
-    )
-}
+    );
+};
 
 export const User = model("User", userSchema);
